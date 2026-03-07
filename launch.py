@@ -1,3 +1,4 @@
+from modules import a1111rocm
 from modules import launch_utils
 
 args = launch_utils.args
@@ -38,6 +39,8 @@ def main():
         exit(0)
 
     launch_utils.startup_timer.record("initial startup")
+
+    a1111rocm.a1111rocm_init()
 
     with launch_utils.startup_timer.subcategory("prepare environment"):
         if not args.skip_prepare_environment:

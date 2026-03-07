@@ -2,6 +2,7 @@ import inspect
 from collections import namedtuple
 import numpy as np
 import torch
+import modules.sd_vae_amd as sd_vae_amd
 from PIL import Image
 from modules import devices, images, sd_vae_approx, sd_samplers, sd_vae_taesd, shared, sd_models
 from modules.shared import opts, state
@@ -31,7 +32,7 @@ def setup_img2img_steps(p, steps=None):
     return steps, t_enc
 
 
-approximation_indexes = {"Full": 0, "Approx NN": 1, "Approx cheap": 2, "TAESD": 3}
+approximation_indexes = {"Full": 0, "Approx NN": 1, "Approx cheap": 2, "TAESD": 3, "AMD": 4}
 
 
 def samples_to_images_tensor(sample, approximation=None, model=None):
@@ -51,6 +52,11 @@ def samples_to_images_tensor(sample, approximation=None, model=None):
     elif approximation == 3:
         x_sample = sd_vae_taesd.decoder_model()(sample.to(devices.device, devices.dtype)).detach()
         x_sample = x_sample * 2 - 1
+    elif approximation == 4:
+        if model is None:
+            model = shared.sd_model
+        with torch.no_grad(), devices.without_autocast(): # fixes an issue with unstable VAEs that are flaky even in fp32
+            x_sample = sd_vae_amd.decode(sample.to(model.first_stage_model.dtype))
     else:
         if model is None:
             model = shared.sd_model
@@ -92,6 +98,20 @@ def images_tensor_to_samples(image, approximation=None, model=None):
     if approximation == 3:
         image = image.to(devices.device, devices.dtype)
         x_latent = sd_vae_taesd.encoder_model()(image)
+    elif approximation == 4:
+        if model is None:
+            model = shared.sd_model
+        model.first_stage_model.to(devices.dtype_vae)
+
+        image = image.to(shared.device, dtype=devices.dtype_vae)
+        image = image * 2 - 1
+        if len(image) > 1:
+            x_latent = torch.stack([
+                sd_vae_amd.encode(model, torch.unsqueeze(img, 0))[0]
+                for img in image
+            ])
+        else:
+            x_latent = sd_vae_amd.encode(model, image)
     else:
         if model is None:
             model = shared.sd_model

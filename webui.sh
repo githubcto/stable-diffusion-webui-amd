@@ -153,7 +153,19 @@ case "$gpu_info" in
     *"Navi 2"*) export HSA_OVERRIDE_GFX_VERSION=10.3.0
     ;;
     *"Navi 3"*) [[ -z "${TORCH_COMMAND}" ]] && \
-         export TORCH_COMMAND="pip install torch torchvision --index-url https://download.pytorch.org/whl/nightly/rocm5.7"
+         export TORCH_COMMAND="pip install torch torchvision --index-url https://download.pytorch.org/whl/rocm5.7"
+    ;;
+    *"Strix Halo"*) [[ -z "${TORCH_COMMAND}" ]] && \
+         export TORCH_COMMAND="pip install torch torchvision --index-url https://download.pytorch.org/whl/rocm7.1"
+    ;;
+    *"Strix Point"*) [[ -z "${TORCH_COMMAND}" ]] && \
+         export TORCH_COMMAND="pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/rocm7.2"
+    ;;
+    *"Kraken Point"*) [[ -z "${TORCH_COMMAND}" ]] && \
+         export TORCH_COMMAND="pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/rocm7.2"
+    ;;
+    *"Navi 4"*) [[ -z "${TORCH_COMMAND}" ]] && \
+         export TORCH_COMMAND="pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/rocm7.2"
     ;;
     *"Renoir"*) export HSA_OVERRIDE_GFX_VERSION=9.0.0
         printf "\n%s\n" "${delimiter}"

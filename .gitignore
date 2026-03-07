@@ -22,6 +22,8 @@ __pycache__
 /params.txt
 /styles.csv.bak
 /webui-user.bat
+/webui-user-python311.bat
+/webui-user-amd.bat
 /webui-user.sh
 /interrogate
 /user.css
@@ -42,3 +44,5 @@ notification.mp3
 /cache
 trace.json
 /sysinfo-????-??-??-??-??.json
+/.miopen_db
+/.triton_cache
