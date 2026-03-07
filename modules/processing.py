@@ -34,6 +34,7 @@ from ldm.models.diffusion.ddpm import LatentDepth2ImageDiffusion
 from einops import repeat, rearrange
 from blendmodes.blend import blendLayers, BlendType
 
+import modules.sd_vae_amd as sd_vae_amd
 
 # some of those options should not be changed at all because they would break the model, so I removed them from options.
 opt_C = 4
@@ -628,8 +629,14 @@ def decode_latent_batch(model, batch, target_device=None, check_for_nans=False):
     if check_for_nans:
         devices.test_for_nans(batch, "unet")
 
+    use_amdvae = shared.opts.sd_vae_decode_method == "AMD"
+
     for i in range(batch.shape[0]):
-        sample = decode_first_stage(model, batch[i:i + 1])[0]
+        
+        if use_amdvae:
+            sample = sd_vae_amd.decode(model, batch[i:i + 1])[0]
+        else:
+            sample = decode_first_stage(model, batch[i:i + 1])[0]
 
         if check_for_nans:
 
@@ -662,7 +669,10 @@ def decode_latent_batch(model, batch, target_device=None, check_for_nans=False):
                 model.first_stage_model.to(devices.dtype_vae)
                 batch = batch.to(devices.dtype_vae)
 
-                sample = decode_first_stage(model, batch[i:i + 1])[0]
+                if use_amdvae:
+                    sample = sd_vae_amd.decode(model, batch[i:i + 1])[0]
+                else:
+                    sample = decode_first_stage(model, batch[i:i + 1])[0]
 
         if target_device is not None:
             sample = sample.to(target_device)
@@ -670,6 +680,7 @@ def decode_latent_batch(model, batch, target_device=None, check_for_nans=False):
         samples.append(sample)
 
     return samples
+
 
 
 def get_fixed_seed(seed):
@@ -966,6 +977,12 @@ def process_images_inner(p: StableDiffusionProcessing) -> Processed:
             p.setup_conds()
 
             p.extra_generation_params.update(model_hijack.extra_generation_params)
+
+            if opts.sd_vae_decode_method != 'Full':
+                p.extra_generation_params['VAE Decoder'] = opts.sd_vae_decode_method
+
+            if opts.sd_vae_encode_method != 'Full':
+                p.extra_generation_params['VAE Encoder'] = opts.sd_vae_encode_method
 
             # params.txt should be saved after scripts.process_batch, since the
             # infotext could be modified by that callback

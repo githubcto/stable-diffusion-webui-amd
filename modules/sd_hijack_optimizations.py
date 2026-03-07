@@ -134,7 +134,7 @@ class SdOptimizationInvokeAI(SdOptimization):
 class SdOptimizationDoggettx(SdOptimization):
     name = "Doggettx"
     cmd_opt = "opt_split_attention"
-    priority = 90
+    priority = 60
 
     def apply(self):
         ldm.modules.attention.CrossAttention.forward = split_cross_attention_forward

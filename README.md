@@ -1,3 +1,121 @@
+<div align="center">
+
+# Stable Diffusion web UI AMD
+
+Stable Diffusion web UI AMD Radeon
+
+</div>
+
+## What's different from upstream A1111?
+
+** Installer supports ROCm TheRock Windows whl package
+
+ROCm TheRock releases windows whl packages.
+https://github.com/ROCm/TheRock/blob/main/RELEASES.md
+
+Installer detects Radeon VGA and install TheRock's rocm whl.
+Code is imported from SD.Next's rocm.py and modified it. Thank you!
+
+HARDWARE
+- gfx1201 gfx1200: RDNA4 RX9070XT RX9060XT
+- gfx1100 gfx1101 gfx1102: RDNA3 RX7900XTX RX7900XT RX7800XT
+- gfx1103: AMD Radeon 780M
+- gfx1030: RDNA2 RX6900XT RX6800XT RX6800
+- gfx1151: RDNA3.5 Strix Halo
+- gfx1150: RDNA3.5 StrixPoint
+- gfx1152: RDNA3.5 Kraken Point
+- gfx1153: RDNA3.5 Medusa Point
+
+Supported hardware is depend on ROCm TheRock.
+gfx1032 RX6600 may be supported. gfx1031 RX6700XT is not yet.
+
+
+** AMD vae
+
+Fast, Low VRAM vae.
+Code is imported from ForgeNeo(ComfyUI backend) and optimized AMD Radeon. Thank you!
+
+standard image size: 1024x1024
+| VAE          | Full      | taesd     | AMD       |
+| ------------ | --------- | --------- | --------- |
+| speed        | fast      | fast      | fast      |
+| VRAM usage   | high      | low       | low       |
+| eyes quality | good      | melted    | good      |
+
+
+HiresFix large size: x1.5 - x2.0
+| VAE          | Full      | taesd     | AMD       |
+| ------------ | --------- | --------- | --------- |
+| speed        | slow      | fast      | fast      |
+| VRAM usage   | very high | low       | low       |
+| eyes quality | good      | melted    | good      |
+
+
+** V-Prediction v_pred SDXL model
+
+V-Prediction v_pred SDXL model is fully supported, same as A1111's dev branch.
+
+This fork is based on A1111's dev branch, not master branch.
+
+
+
+## Install
+
+Same as upstream A1111.
+
+- install Microsoft Visual C++ Redistributable from [microsoft.com](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist) .
+- install [git](https://git-scm.com/).
+- install python3.10.x from [www.python.org](https://www.python.org/) .
+    Tested using Python3.10.
+    Python3.11 may work, use webui-user-python311.bat .
+
+You don't need any COMMANDLINE_ARGS= options.
+recommended COMMANDLINE_ARGS= option is --models-dir ,
+i.e.,
+COMMANDLINE_ARGS=--models-dir D:/AI/models
+
+
+## Issue
+
+- Current supported hardware is depend on ROCm TheRock.
+- AMD official ROCm will be used, may be.
+
+
+
+## FAQ
+
+- HIP_VISIBLE_DEVICES
+You don't need configure HIP_VISIBLE_DEVICES.
+Code detect VGA and set HIP_VISIBLE_DEVICES temporary, same as SD.Next.
+If you configure HIP_VISIBLE_DEVICES, insteller does not overwrite HIP_VISIBLE_DEVICES.
+
+- MIOPEN_FIND_MODE
+Code configure  MIOPEN_FIND_MODE = FAST/2 temporary, same as SD.Next.
+If you configure MIOPEN_FIND_MODE, code does not overwrite MIOPEN_FIND_MODE.
+
+
+## codes
+
+Thanks
+
+Installer related: https://github.com/vladmandic/sdnext
+
+AMD vae related:
+https://github.com/Haoming02/sd-webui-forge-classic
+https://github.com/Comfy-Org/ComfyUI
+
+
+## ChangeLog
+
+2026 Mar. 7th : Init.
+
+
+
+---
+---
+
+
+
 # Stable Diffusion web UI
 A web interface for Stable Diffusion, implemented using Gradio library.
 

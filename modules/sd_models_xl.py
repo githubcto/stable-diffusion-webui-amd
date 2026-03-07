@@ -7,6 +7,7 @@ import sgm.modules.diffusionmodules.denoiser_scaling
 import sgm.modules.diffusionmodules.discretizer
 from modules import devices, shared, prompt_parser
 from modules import torch_utils
+import modules.sd_vae_amd as sd_vae_amd
 
 
 def get_learned_conditioning(self: sgm.models.diffusion.DiffusionEngine, batch: prompt_parser.SdConditioning | list[str]):
@@ -112,3 +113,17 @@ sgm.modules.encoders.modules.print = shared.ldm_print
 # this gets the code to load the vanilla attention that we override
 sgm.modules.attention.SDP_IS_AVAILABLE = True
 sgm.modules.attention.XFORMERS_IS_AVAILABLE = False
+
+
+# patch sd_vae_amd
+original_encode_first_stage = sgm.models.diffusion.DiffusionEngine.encode_first_stage
+
+@torch.no_grad()
+def amdvae_encode_first_stage(self, x):
+
+    if shared.opts.sd_vae_encode_method == "AMD":
+        return sd_vae_amd.encode(self, x)
+    else:
+        return original_encode_first_stage(self, x)
+
+sgm.models.diffusion.DiffusionEngine.encode_first_stage = amdvae_encode_first_stage
