@@ -29,7 +29,7 @@ Code is imported from SD.Next's rocm.py and modified it. Thank you!
 - gfx1030: RDNA2 RX6900XT RX6800XT RX6800
 - gfx1151: RDNA3.5 Strix Halo
 - gfx1150: RDNA3.5 StrixPoint
-- gfx1152: RDNA3.5 Kraken Point
+- gfx1152: RDNA3.5 Krackan Point
 - gfx1153: RDNA3.5 Medusa Point
 
 Supported hardware is depend on ROCm TheRock.
@@ -38,9 +38,9 @@ gfx1032 RX6600 may be supported. gfx1031 RX6700XT is not yet.
 
 
 
-### AMD vae
+### AMD VAE
 
-Fast, Low VRAM vae.
+Fast, Low VRAM VAE.
 
 Code is imported from ForgeNeo(ComfyUI backend) and optimized AMD Radeon. Thank you!
 
