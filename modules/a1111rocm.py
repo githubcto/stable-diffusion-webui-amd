@@ -38,7 +38,7 @@ RDNA_MAP = {
     "gfx1103": "RDNA3 Phoenix",
     "gfx1150": "RDNA3.5 Strix Point",
     "gfx1151": "RDNA3.5 Strix Halo",
-    "gfx1152": "RDNA3.5 Kraken Point",
+    "gfx1152": "RDNA3.5 Krackan Point",
     "gfx1153": "RDNA3.5 Medusa Point",
     "gfx1200": "RDNA4 Navi44",
     "gfx1201": "RDNA4 Navi48"
@@ -51,9 +51,9 @@ APU_ARCH = {
     "gfx1036",  # Raphael
     "gfx1037",  # Mendocino
     "gfx1103",  # Phoenix
-    "gfx1150",  # StrixPoint
+    "gfx1150",  # Strix Point
     "gfx1151",  # Strix Halo
-    "gfx1152",  # Kraken Point
+    "gfx1152",  # Krackan Point
     "gfx1153",  # Medusa Point
 }
 
