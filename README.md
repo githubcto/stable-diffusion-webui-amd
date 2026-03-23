@@ -8,7 +8,7 @@ Stable Diffusion web UI AMD Radeon
 
  
 
-## What's different from upstream A1111?
+## What's different from upstream A1111 ?
 
 ### Installer supports ROCm TheRock Windows whl package
 
@@ -85,7 +85,7 @@ Same as upstream A1111.
 
 You don't need any COMMANDLINE_ARGS= options.
 
-recommended COMMANDLINE_ARGS= option is --models-dir ,
+useful COMMANDLINE_ARGS= option is --models-dir ,
 
 i.e.,
 
@@ -107,7 +107,7 @@ You don't need configure HIP_VISIBLE_DEVICES.
 
 Code detect VGA and set HIP_VISIBLE_DEVICES temporary, same as SD.Next.
 
-If you configure HIP_VISIBLE_DEVICES, insteller does not overwrite HIP_VISIBLE_DEVICES.
+If you configure HIP_VISIBLE_DEVICES, installer does not overwrite HIP_VISIBLE_DEVICES.
 
 
 - MIOPEN_FIND_MODE
