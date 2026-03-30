@@ -24,6 +24,9 @@ except ImportError:
 # RDNA / APU mapping
 # ----------------------------------------
 RDNA_MAP = {
+    "gfx1010": "RDNA1 Navi10",
+    "gfx1011": "RDNA1 Navi12",
+    "gfx1012": "RDNA1 Navi14",
     "gfx1030": "RDNA2 Navi21",
     "gfx1031": "RDNA2 Navi22",
     "gfx1032": "RDNA2 Navi23",
@@ -270,7 +273,10 @@ def get_total_ram():
 #    "gfx1102": "pip install torch==2.10.0 torchvision==0.25.0 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2/gfx110X-all",
 #    "gfx1103": "pip install torch==2.10.0 torchvision==0.25.0 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2/gfx110X-all",
 #    "gfx1030": "pip install torch==2.10.0 torchvision==0.25.0 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx103X-dgpu/",
-#    "gfx1032": "pip install torch==2.10.0 torchvision==0.25.0 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx103X-dgpu/"
+#    "gfx1032": "pip install torch==2.10.0 torchvision==0.25.0 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx103X-dgpu/",
+#    "gfx1010": "pip install torch==2.10.0 torchvision==0.25.0 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx101X-dgpu/",
+#    "gfx1011": "pip install torch==2.10.0 torchvision==0.25.0 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx101X-dgpu/",
+#    "gfx1012": "pip install torch==2.10.0 torchvision==0.25.0 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx101X-dgpu/"
 #}
 # TheRock has issue "Unable to load file: gfx908_metadata.tn.model" since 20260221.
 # Use 20260220.
@@ -286,7 +292,10 @@ TORCH_CMD_MAP = {
     "gfx1102": "pip install torch==2.10.0+rocm7.12.0a20260220 torchvision==0.25.0+rocm7.12.0a20260220 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2/gfx110X-all",
     "gfx1103": "pip install torch==2.10.0+rocm7.12.0a20260220 torchvision==0.25.0+rocm7.12.0a20260220 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2/gfx110X-all",
     "gfx1030": "pip install torch==2.10.0+rocm7.12.0a20260220 torchvision==0.25.0+rocm7.12.0a20260220 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx103X-dgpu/",
-    "gfx1032": "pip install torch==2.10.0+rocm7.12.0a20260220 torchvision==0.25.0+rocm7.12.0a20260220 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx103X-dgpu/"
+    "gfx1032": "pip install torch==2.10.0+rocm7.12.0a20260220 torchvision==0.25.0+rocm7.12.0a20260220 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx103X-dgpu/",
+    "gfx1010": "pip install torch==2.10.0+rocm7.12.0a20260220 torchvision==0.25.0+rocm7.12.0a20260220 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx101X-dgpu/",
+    "gfx1011": "pip install torch==2.10.0+rocm7.12.0a20260220 torchvision==0.25.0+rocm7.12.0a20260220 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx101X-dgpu/",
+    "gfx1012": "pip install torch==2.10.0+rocm7.12.0a20260220 torchvision==0.25.0+rocm7.12.0a20260220 rocm[devel] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/v2-staging/gfx101X-dgpu/"
 }
 
 def a1111rocm_init():
