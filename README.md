@@ -8,7 +8,7 @@ Stable Diffusion web UI AMD Radeon
 
  
 
-## What's different from upstream A1111?
+## What's different from upstream A1111 ?
 
 ### Installer supports ROCm TheRock Windows whl package
 
@@ -28,14 +28,22 @@ Code is imported from SD.Next's rocm.py and modified it. Thank you!
 - gfx1103: AMD Radeon 780M
 - gfx1030: RDNA2 RX6900XT RX6800XT RX6800
 - gfx1151: RDNA3.5 Strix Halo
-- gfx1150: RDNA3.5 StrixPoint
+- gfx1150: RDNA3.5 Strix Point
 - gfx1152: RDNA3.5 Krackan Point
 - gfx1153: RDNA3.5 Medusa Point
 
 Supported hardware is depend on ROCm TheRock.
 
-gfx1032 RX6600 may be supported. gfx1031 RX6700XT is not yet.
-
+TheRock support GPUs
+- gfx1031: RDNA2 Navi22 RX6700, RX6700XT, RX6750XT
+- gfx1032: RDNA2 Navi23 RX6600, RX6600XT, RX6650XT
+- gfx1033: RDNA2 Van Gogh Sephiroth Steam Deck GPU
+- gfx1034: RDNA2 Navi24 RX6400, RX6500XT
+- gfx1035: RDNA2 Rembrandt Radeon 660M, 680M
+- gfx1036: RDNA2 Raphael Ryzen 7XX0 CPU, Ryzen 9000 CPU
+- gfx1010: RDNA1 Navi10 RX5700, RX5700XT
+- gfx906: GCN5.1 Vega20 RadeonVII
+- gfx900: GCN5.0 Vega10 VEGA56, VEGA64
 
 
 ### AMD VAE
@@ -85,7 +93,7 @@ Same as upstream A1111.
 
 You don't need any COMMANDLINE_ARGS= options.
 
-recommended COMMANDLINE_ARGS= option is --models-dir ,
+useful COMMANDLINE_ARGS= option is --models-dir ,
 
 i.e.,
 
@@ -107,7 +115,7 @@ You don't need configure HIP_VISIBLE_DEVICES.
 
 Code detect VGA and set HIP_VISIBLE_DEVICES temporary, same as SD.Next.
 
-If you configure HIP_VISIBLE_DEVICES, insteller does not overwrite HIP_VISIBLE_DEVICES.
+If you configure HIP_VISIBLE_DEVICES, installer does not overwrite HIP_VISIBLE_DEVICES.
 
 
 - MIOPEN_FIND_MODE
