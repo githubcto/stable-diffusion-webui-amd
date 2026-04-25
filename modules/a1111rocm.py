@@ -26,6 +26,7 @@ except ImportError:
 RDNA_MAP = {
     "gfx900": "GCN5.0 Vega10",
     "gfx906": "GCN5.1 Vega20",
+    "gfx1010": "RDNA1 Navi10",
     "gfx1011": "RDNA1 Navi12",
     "gfx1012": "RDNA1 Navi14",
     "gfx1030": "RDNA2 Navi21",
