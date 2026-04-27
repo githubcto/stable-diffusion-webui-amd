@@ -79,6 +79,22 @@ This fork is based on A1111's dev branch, not master branch.
 
 
 
+### Flash Attention 2
+
+Support Flash Attention 2 ( Triton backend ).
+
+Settings - Optimizations - Cross attention optimization - Flash Attention 2 (AMD Triton)
+
+
+
+### sage attention
+
+Support sage attention ( Triton backend ).
+
+Settings - Optimizations - Cross attention optimization - Sage Attention 1 (AMD Triton)
+
+
+
 ## Install
 
 Same as upstream A1111.
@@ -142,6 +158,9 @@ https://github.com/Comfy-Org/ComfyUI
 
 
 ## ChangeLog
+2026 Apr. 27th : support Flash Attention 2 and sage attention.
+
+2026 Apr. 25th : add GPUs.
 
 2026 Mar. 7th : Init.
 
