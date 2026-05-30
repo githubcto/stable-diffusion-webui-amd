@@ -98,7 +98,7 @@ def flash_attnblock_forward(self, x):
 
 
 class SdOptimizationFlashAttentionAMD(sd_hijack_optimizations.SdOptimization):
-    name = "Flash Attention 2 (AMD Triton)"
+    name = "Flash Attention 2"
     cmd_opt = "opt_flash_attn_amd"
     priority = 57
 
@@ -121,7 +121,7 @@ def inject_flash_attention():
     @wraps(original_func)
     def wrapper(res):
         original_func(res)
-        if not any(opt.name == "Flash Attention 2 (AMD Triton)" for opt in res):
+        if not any(opt.name == "Flash Attention 2" for opt in res):
             res.append(SdOptimizationFlashAttentionAMD())
 
     sd_hijack_optimizations.list_optimizers = wrapper
