@@ -10,31 +10,28 @@ Stable Diffusion web UI AMD Radeon
 
 ## What's different from upstream A1111 ?
 
-### Installer supports ROCm TheRock Windows whl package
+### Installer supports ROCm TheRock Windows whl package and ROCm 7.13.0 Preview.
 
 ROCm TheRock releases windows whl packages.
 
 https://github.com/ROCm/TheRock/blob/main/RELEASES.md
 
-Installer detects Radeon VGA and install TheRock's rocm whl.
+ROCm 7.13.0 Preview releases windows whl packages.
+
+https://rocm.docs.amd.com/en/7.13.0-preview/index.html
+
+Installer detects Radeon VGA and install TheRock's rocm whl / ROCm 7.13.0 Preview whl.
 
 Code is imported from SD.Next's rocm.py and modified it. Thank you!
 
-
+ 
 
 ### HARDWARE
-- gfx1201 gfx1200: RDNA4 RX9070XT RX9060XT
-- gfx1100 gfx1101 gfx1102: RDNA3 RX7900XTX RX7900XT RX7800XT
+ROCm 7.13.0 Preview support GPUs
+- gfx1201 gfx1200: RDNA4 RX9070XT RX9070 RX9060XT R9700
+- gfx1100 gfx1101 gfx1102: RDNA3 RX7900XTX RX7900XT RX7800XT RX7700XT RX7600
 - gfx1103: AMD Radeon 780M
 - gfx1030: RDNA2 RX6900XT RX6800XT RX6800
-- gfx1151: RDNA3.5 Strix Halo
-- gfx1150: RDNA3.5 Strix Point
-- gfx1152: RDNA3.5 Krackan Point
-- gfx1153: RDNA3.5 Medusa Point
-
-Supported hardware is depend on ROCm TheRock.
-
-TheRock support GPUs
 - gfx1031: RDNA2 Navi22 RX6700, RX6700XT, RX6750XT
 - gfx1032: RDNA2 Navi23 RX6600, RX6600XT, RX6650XT
 - gfx1033: RDNA2 Van Gogh Sephiroth Steam Deck GPU
@@ -42,8 +39,15 @@ TheRock support GPUs
 - gfx1035: RDNA2 Rembrandt Radeon 660M, 680M
 - gfx1036: RDNA2 Raphael Ryzen 7XX0 CPU, Ryzen 9000 CPU
 - gfx1010: RDNA1 Navi10 RX5700, RX5700XT
+- gfx1151: RDNA3.5 Strix Halo
+- gfx1150: RDNA3.5 Strix Point
+- gfx1152: RDNA3.5 Krackan Point
+
+
+TheRock support GPUs
 - gfx906: GCN5.1 Vega20 RadeonVII
 - gfx900: GCN5.0 Vega10 VEGA56, VEGA64
+- gfx1153: RDNA3.5 Medusa Point
 
 
 ### AMD VAE
@@ -81,9 +85,9 @@ This fork is based on A1111's dev branch, not master branch.
 
 ### Flash Attention 2
 
-Support Flash Attention 2 ( Triton backend ).
+Support Flash Attention 2.
 
-Settings - Optimizations - Cross attention optimization - Flash Attention 2 (AMD Triton)
+Settings - Optimizations - Cross attention optimization - Flash Attention 2
 
 
 
@@ -158,6 +162,8 @@ https://github.com/Comfy-Org/ComfyUI
 
 
 ## ChangeLog
+2026 May. 30th : ROCm 7.13.0 Preview.
+
 2026 Apr. 27th : support Flash Attention 2 and sage attention.
 
 2026 Apr. 25th : add GPUs.
