@@ -33,5 +33,5 @@ torchsde==0.2.6
 transformers==4.48.1
 httpx==0.24.1
 pillow-avif-plugin==1.4.3
-triton-windows
+triton-windows<3.8
 sageattention @ https://github.com/guinmoon/SageAttention-Rocm7/releases/download/v1.0.6_rocm7/sageattention-1.0.6-py3-none-any.whl
