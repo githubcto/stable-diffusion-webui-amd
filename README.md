@@ -10,24 +10,24 @@ Stable Diffusion web UI AMD Radeon
 
 ## What's different from upstream A1111 ?
 
-### Installer supports ROCm TheRock Windows whl package and ROCm 7.13.0 Preview.
+### Installer supports ROCm 7.14.0 Windows whl package.
 
 ROCm TheRock releases windows whl packages.
 
 https://github.com/ROCm/TheRock/blob/main/RELEASES.md
 
-ROCm 7.13.0 Preview releases windows whl packages.
+ROCm 7.14.0 windows whl packages.
 
-https://rocm.docs.amd.com/en/7.13.0-preview/index.html
+https://rocm.docs.amd.com/en/docs-7.14.0/
 
-Installer detects Radeon VGA and install TheRock's rocm whl / ROCm 7.13.0 Preview whl.
+Installer detects Radeon VGA and install TheRock's rocm whl / ROCm 7.14.0 whl.
 
 Code is imported from SD.Next's rocm.py and modified it. Thank you!
 
  
 
 ### HARDWARE
-ROCm 7.13.0 Preview support GPUs
+ROCm 7.14.0 support GPUs
 - gfx1201 gfx1200: RDNA4 RX9070XT RX9070 RX9060XT R9700
 - gfx1100 gfx1101 gfx1102: RDNA3 RX7900XTX RX7900XT RX7800XT RX7700XT RX7600
 - gfx1103: AMD Radeon 780M
@@ -42,12 +42,12 @@ ROCm 7.13.0 Preview support GPUs
 - gfx1151: RDNA3.5 Strix Halo
 - gfx1150: RDNA3.5 Strix Point
 - gfx1152: RDNA3.5 Krackan Point
+- gfx1153: RDNA3.5 Medusa Point
 
 
 TheRock support GPUs
 - gfx906: GCN5.1 Vega20 RadeonVII
 - gfx900: GCN5.0 Vega10 VEGA56, VEGA64
-- gfx1153: RDNA3.5 Medusa Point
 
 
 ### AMD VAE
@@ -162,6 +162,8 @@ https://github.com/Comfy-Org/ComfyUI
 
 
 ## ChangeLog
+2026 Jul. 27th : ROCm 7.14.0 .
+
 2026 May. 30th : ROCm 7.13.0 Preview.
 
 2026 Apr. 27th : support Flash Attention 2 and sage attention.
