@@ -10,7 +10,7 @@ Stable Diffusion web UI AMD Radeon
 
 ## What's different from upstream A1111 ?
 
-### Installer supports ROCm 7.14.0 Windows whl package.
+### Installer supports ROCm TheRock Windows whl package and ROCm 7.14.0 Windows whl package.
 
 ROCm TheRock releases windows whl packages.
 
@@ -24,7 +24,7 @@ Installer detects Radeon VGA and install TheRock's rocm whl / ROCm 7.14.0 whl.
 
 Code is imported from SD.Next's rocm.py and modified it. Thank you!
 
- 
+<br>
 
 ### HARDWARE
 ROCm 7.14.0 support GPUs
@@ -49,6 +49,7 @@ TheRock support GPUs
 - gfx906: GCN5.1 Vega20 RadeonVII
 - gfx900: GCN5.0 Vega10 VEGA56, VEGA64
 
+<br>
 
 ### AMD VAE
 
@@ -73,7 +74,7 @@ Code is imported from ForgeNeo(ComfyUI backend) and optimized AMD Radeon. Thank 
 | VRAM usage   | very high | low       | low       |
 | eyes quality | good      | melted    | good      |
 
-
+<br>
 
 ### V-Prediction v_pred SDXL model
 
@@ -81,7 +82,7 @@ V-Prediction v_pred SDXL model is fully supported, same as A1111's dev branch.
 
 This fork is based on A1111's dev branch, not master branch.
 
-
+<br>
 
 ### Flash Attention 2
 
@@ -89,7 +90,7 @@ Support Flash Attention 2.
 
 Settings - Optimizations - Cross attention optimization - Flash Attention 2
 
-
+<br>
 
 ### sage attention
 
@@ -97,7 +98,7 @@ Support sage attention ( Triton backend ).
 
 Settings - Optimizations - Cross attention optimization - Sage Attention 1 (AMD Triton)
 
-
+<br>
 
 ## Install
 
@@ -111,6 +112,9 @@ Same as upstream A1111.
   
     Python3.11 may work, use webui-user-python311.bat .
 
+- Restart A1111 once the installation is complete.
+
+<br>
 You don't need any COMMANDLINE_ARGS= options.
 
 useful COMMANDLINE_ARGS= option is --models-dir ,
@@ -119,31 +123,32 @@ i.e.,
 
 COMMANDLINE_ARGS=--models-dir D:/AI/models
 
+<br>
 
 ## Issue
 
 - Current supported hardware is depend on ROCm TheRock.
-- AMD official ROCm will be used, may be.
 
-
+<br>
 
 ## FAQ
 
 - HIP_VISIBLE_DEVICES
 
-You don't need configure HIP_VISIBLE_DEVICES.
+    You don't need configure HIP_VISIBLE_DEVICES.
 
-Code detect VGA and set HIP_VISIBLE_DEVICES temporary, same as SD.Next.
+    Code detect VGA and set HIP_VISIBLE_DEVICES temporary, same as SD.Next.
 
-If you configure HIP_VISIBLE_DEVICES, installer does not overwrite HIP_VISIBLE_DEVICES.
+    If you configure HIP_VISIBLE_DEVICES, installer does not overwrite HIP_VISIBLE_DEVICES.
 
 
 - MIOPEN_FIND_MODE
 
-Code configure  MIOPEN_FIND_MODE = FAST/2 temporary, same as SD.Next.
+    Code configure  MIOPEN_FIND_MODE = FAST/2 temporary, same as SD.Next.
 
-If you configure MIOPEN_FIND_MODE, code does not overwrite MIOPEN_FIND_MODE.
+    If you configure MIOPEN_FIND_MODE, code does not overwrite MIOPEN_FIND_MODE.
 
+<br>
 
 ## codes
 
@@ -160,6 +165,7 @@ https://github.com/Haoming02/sd-webui-forge-classic
 
 https://github.com/Comfy-Org/ComfyUI
 
+<br>
 
 ## ChangeLog
 2026 Jul. 27th : ROCm 7.14.0 .
