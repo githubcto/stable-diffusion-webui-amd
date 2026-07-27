@@ -264,28 +264,28 @@ def get_total_ram():
 # OS env
 # ----------------------------------------
 TORCH_CMD_MAP = {
-    "gfx1200": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx120X-all",
-    "gfx1201": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx120X-all",
-    "gfx1150": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx1150/",
-    "gfx1151": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx1151/",
-    "gfx1152": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx1152/",
-    "gfx1153": "pip install torch[device-gfx1153] torchvision[device-gfx1153] rocm[devel,device-gfx1153] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/whl-multi-arch/",
-    "gfx1100": "pip install torch==2.9.1+rocm7.13.0 torchvision==0.24.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx110X-all",
-    "gfx1101": "pip install torch==2.9.1+rocm7.13.0 torchvision==0.24.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx110X-all",
-    "gfx1102": "pip install torch==2.9.1+rocm7.13.0 torchvision==0.24.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx110X-all",
-    "gfx1103": "pip install torch==2.9.1+rocm7.13.0 torchvision==0.24.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx110X-all",
+    "gfx1200": "pip install torch[device-gfx1200]==2.12.0+rocm7.14.0 torchvision[device-gfx1200]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1200]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1201": "pip install torch[device-gfx1201]==2.12.0+rocm7.14.0 torchvision[device-gfx1201]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1201]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1150": "pip install torch[device-gfx1150]==2.12.0+rocm7.14.0 torchvision[device-gfx1150]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1150]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1151": "pip install torch[device-gfx1151]==2.12.0+rocm7.14.0 torchvision[device-gfx1151]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1151]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1152": "pip install torch[device-gfx1152]==2.12.0+rocm7.14.0 torchvision[device-gfx1152]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1152]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1153": "pip install torch[device-gfx1153]==2.12.0+rocm7.14.0 torchvision[device-gfx1153]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1153]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1100": "pip install torch[device-gfx1100]==2.12.0+rocm7.14.0 torchvision[device-gfx1100]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1100]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1101": "pip install torch[device-gfx1101]==2.12.0+rocm7.14.0 torchvision[device-gfx1101]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1101]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1102": "pip install torch[device-gfx1102]==2.12.0+rocm7.14.0 torchvision[device-gfx1102]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1102]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1103": "pip install torch[device-gfx1103]==2.12.0+rocm7.14.0 torchvision[device-gfx1103]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1103]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
     "gfx900": "pip install torch[device-gfx900] torchvision[device-gfx900] rocm[devel,device-gfx900] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/whl-multi-arch/",
     "gfx906": "pip install torch[device-gfx906] torchvision[device-gfx906] rocm[devel,device-gfx906] numpy==1.26.2 --extra-index-url https://rocm.nightlies.amd.com/whl-multi-arch/",
-    "gfx1030": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx103X-all/",
-    "gfx1031": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx103X-all/",
-    "gfx1032": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx103X-all/",
-    "gfx1033": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx103X-all/",
-    "gfx1034": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx103X-all/",
-    "gfx1035": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx103X-all/",
-    "gfx1036": "pip install torch==2.11.0+rocm7.13.0 torchvision==0.26.0+rocm7.13.0 rocm[devel] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl/gfx103X-all/",
-    "gfx1010": "pip install torch[device-gfx1010]==2.11.0+rocm7.13.0 torchvision[device-gfx1010]==0.26.0+rocm7.13.0 rocm[devel,device-gfx1010] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
-    "gfx1011": "pip install torch[device-gfx1011]==2.11.0+rocm7.13.0 torchvision[device-gfx1011]==0.26.0+rocm7.13.0 rocm[devel,device-gfx1011] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
-    "gfx1012": "pip install torch[device-gfx1012]==2.11.0+rocm7.13.0 torchvision[device-gfx1012]==0.26.0+rocm7.13.0 rocm[devel,device-gfx1012] numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/"
+    "gfx1030": "pip install torch[device-gfx1030]==2.12.0+rocm7.14.0 torchvision[device-gfx1030]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1030]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1031": "pip install torch[device-gfx1031]==2.12.0+rocm7.14.0 torchvision[device-gfx1031]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1031]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1032": "pip install torch[device-gfx1032]==2.12.0+rocm7.14.0 torchvision[device-gfx1032]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1032]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1033": "pip install torch[device-gfx1033]==2.12.0+rocm7.14.0 torchvision[device-gfx1033]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1033]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1034": "pip install torch[device-gfx1034]==2.12.0+rocm7.14.0 torchvision[device-gfx1034]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1034]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1035": "pip install torch[device-gfx1035]==2.12.0+rocm7.14.0 torchvision[device-gfx1035]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1035]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1036": "pip install torch[device-gfx1036]==2.12.0+rocm7.14.0 torchvision[device-gfx1036]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1036]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1010": "pip install torch[device-gfx1010]==2.12.0+rocm7.14.0 torchvision[device-gfx1010]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1010]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1011": "pip install torch[device-gfx1011]==2.12.0+rocm7.14.0 torchvision[device-gfx1011]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1011]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/",
+    "gfx1012": "pip install torch[device-gfx1012]==2.12.0+rocm7.14.0 torchvision[device-gfx1012]==0.27.0+rocm7.14.0 rocm[devel,device-gfx1012]==7.14.0 numpy==1.26.2 --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/"
 }
 
 def a1111rocm_init():
